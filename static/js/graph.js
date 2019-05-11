@@ -15,5 +15,13 @@ class Graph {
 		text(this.xmax, 500, 250);
 		text(this.ymin, 250, 500);
 		text(this.ymax, 250, 10);
+
+		for (let p of this.points) {
+			p.draw(this.xmin, this.xmax, this.ymin, this.ymax);
+		}
+	}
+
+	addPoint(p) {
+		this.points.push(p);
 	}
 }
