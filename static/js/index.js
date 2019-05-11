@@ -14,17 +14,17 @@ function setup() {
 	zeros = [];
 	colors = [];
 
-	for (let i = 0; i < 1000; i++) {
+	for (let i = 0; i < 10000; i++) {
 		newtMethod();
 	}
 }
 
 function draw() {
-	graph.draw();
+	graph.draw(width, height);
 }
 
 function newtMethod() {
-	let startPoint = new Complex(Math.random()*(XMAX - XMIN + 1) + XMIN, Math.random()*(YMAX - YMIN + 1) + YMIN);
+	let startPoint = new Complex(Math.random()*(XMAX - XMIN) + XMIN, Math.random()*(YMAX - YMIN) + YMIN);
 	let currentPoint = startPoint;
 
 	for (let i = 0; i < 25; i++) {
@@ -66,6 +66,11 @@ function newtMethod() {
 
 function plugIntoFunction(x) {
 	return x.pow(2).subtract(new Complex(1, 0)); // x^2 - 1
+	
+	// let currentComplex = x.pow(3).add((new Complex(3, 0)).multiply(x.pow(2))).subtract(x).subtract(new Complex(3, 0));
+	// console.log(currentComplex);
+
+	// return currentComplex; // x^3 + 3x^2 - x - 3
 }
 
 function plugIntoFPrime(x) {

@@ -7,17 +7,17 @@ class Graph {
 		this.points = [];
 	}
 
-	draw() {
+	draw(width, height) {
 		fill(0, 0, 0);
-		line(250, 0, 250, 500); // y
-		line(0, 250, 500, 250); // x
-		text(this.xmin, 0, 250);
-		text(this.xmax, 500, 250);
-		text(this.ymin, 250, 500);
-		text(this.ymax, 250, 10);
+		line(width / 2, 0, width / 2, width); // y
+		line(0, height / 2, height, height / 2); // x
+		text(this.xmin, 0, height / 2);
+		text(this.xmax, width - 15, height / 2);
+		text(this.ymin, width / 2, height);
+		text(this.ymax, width / 2, 10);
 
 		for (let p of this.points) {
-			p.draw(this.xmin, this.xmax, this.ymin, this.ymax);
+			p.draw(this.xmin, this.xmax, this.ymin, this.ymax, width, height);
 		}
 	}
 

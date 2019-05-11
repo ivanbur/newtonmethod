@@ -7,10 +7,9 @@ class Point {
 		this.b = b;
 	}
 
-	draw(xmin, xmax, ymin, ymax) {
-		// noStroke();
-		// fill(color(this.r, this.g, this.b));
-		fill('red');
-		ellipse((500 / (xmax - xmin)) * this.x + 250, (500 / (ymax - ymin)) * this.y + 250, 1, 1);
+	draw(xmin, xmax, ymin, ymax, width, height) {
+		noStroke();
+		fill(color(this.r, this.g, this.b));
+		ellipse((width / (xmax - xmin)) * this.x + (width / 2), (height / (ymax - ymin)) * this.y + (height / 2), 10, 10);
 	}
 }
