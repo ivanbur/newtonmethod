@@ -51,7 +51,7 @@ class Complex {
 		}
 
 		if (exponent < 0) {
-			// TODO: negative exponents
+			return 1 / pow(-exponent);
 		}
 
 		// TODO: exponents that are not integers
